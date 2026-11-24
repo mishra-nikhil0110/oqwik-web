@@ -10,13 +10,15 @@ export function Hero() {
     <section aria-labelledby="hero-title" className="relative overflow-hidden">
       <div className="container-page grid items-center gap-14 pt-10 pb-16 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:pt-20 lg:pb-24">
         <div className="flex animate-rise flex-col items-start gap-6">
-          <p className="inline-flex items-center gap-2 rounded-full bg-marigold-soft px-3.5 py-1.5 text-[14px] font-semibold text-marigold-ink ring-1 ring-marigold/50">
-            <span className="size-2 rounded-full bg-marigold" aria-hidden="true" />
-            {hero.eyebrow}
-          </p>
-          <h1 id="hero-title" className="text-display max-w-[15ch]">
-            {hero.headline.before} <span className="highlight-marigold">{hero.headline.highlight}</span>
-            {hero.headline.after}
+          <h1 id="hero-title" className="flex flex-col items-start gap-6">
+            <span className="inline-flex items-center gap-2 rounded-full bg-marigold-soft px-3.5 py-1.5 text-[14px] leading-snug font-semibold tracking-normal text-marigold-ink ring-1 ring-marigold/50">
+              <span className="size-2 shrink-0 rounded-full bg-marigold" aria-hidden="true" />
+              {hero.eyebrow}
+            </span>
+            <span className="text-display block max-w-[15ch]">
+              {hero.headline.before} <span className="highlight-marigold">{hero.headline.highlight}</span>
+              {hero.headline.after}
+            </span>
           </h1>
           <p className="text-lead max-w-[46ch] text-ink-2">{hero.subhead}</p>
 

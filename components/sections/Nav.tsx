@@ -35,7 +35,7 @@ export function Nav() {
       <Ticker />
       <div className="border-b border-line/80 bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/80">
         <div className="container-page flex h-[4.25rem] items-center justify-between gap-4">
-          <a href="#top" className="shrink-0 rounded-md" aria-label="OQwik home">
+          <a href="/#top" className="shrink-0 rounded-md" aria-label="OQwik home">
             <Logo width={112} priority withTagline />
           </a>
 

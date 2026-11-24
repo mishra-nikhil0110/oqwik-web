@@ -133,7 +133,12 @@ export function TrialForm() {
         <MessageCircle className="size-5" aria-hidden="true" />
         {closing.form.submit}
       </button>
-      <p className="text-center text-[14px] text-ink-2">{closing.form.privacy}</p>
+      <p className="text-center text-[14px] text-ink-2">
+        {closing.form.privacy}{" "}
+        <a href="/privacy-policy" className="font-medium text-brand underline underline-offset-2 hover:text-brand-deep">
+          {closing.form.privacyLink}
+        </a>
+      </p>
     </form>
   );
 }

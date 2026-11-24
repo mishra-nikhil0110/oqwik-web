@@ -24,16 +24,16 @@ export const announcement = {
 
 export const nav = {
   links: [
-    { href: "#how-it-works", label: "How it works" },
-    { href: "#features", label: "Features" },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/#how-it-works", label: "How it works" },
+    { href: "/#features", label: "Features" },
+    { href: "/#pricing", label: "Pricing" },
+    { href: "/#faq", label: "FAQ" },
   ],
-  cta: { href: "#start-trial", label: "Start free trial", short: "Free trial" },
+  cta: { href: "/#start-trial", label: "Start free trial", short: "Free trial" },
 };
 
 export const hero = {
-  eyebrow: "QR ordering + billing for restaurants",
+  eyebrow: "QR code ordering & billing system for restaurants",
   headline: { before: "Let your tables", highlight: "take the orders.", after: "" },
   subhead:
     "Guests scan, order and pay from their phones. Every order reaches your kitchen with its table number, and the bill writes itself.",
@@ -83,7 +83,7 @@ export type JourneyStep = {
 };
 
 export const howItWorks = {
-  eyebrow: "How it works",
+  eyebrow: "How QR table ordering works",
   title: "Follow one order at Table 7, from scan to served",
   intro:
     "This is what happens on a busy evening once OQwik is on your tables. Nobody walks an order slip anywhere, and nobody has to remember which table ordered what.",
@@ -93,7 +93,7 @@ export const howItWorks = {
     {
       time: "8:40 PM",
       actor: "Guest",
-      title: "Sits down and scans the table QR",
+      title: "Sits down and scans the table QR code to order",
       body: "The QR on Table 7 opens your menu in the phone's browser. Nobody downloads an app or waits for a waiter to bring menus.",
       points: ["Works with any phone camera", "Table number captured automatically"],
       scene: "scan",
@@ -134,7 +134,7 @@ export const howItWorks = {
 };
 
 export const features = {
-  eyebrow: "Everything in one system",
+  eyebrow: "QR menu, KOT and GST billing in one system",
   title: "Built for a real Saturday-night rush",
   items: [
     { icon: "qr", title: "A QR for every table", body: "Each table gets its own code, so every order arrives already tagged with where to take it." },
@@ -181,15 +181,31 @@ export const pricing = {
 
 export const faq = {
   eyebrow: "FAQ",
-  title: "Questions owners ask us first",
+  title: "Questions restaurant owners ask us first",
+  panelLabel: "Frequently asked questions",
+  more: "More questions",
+  help: {
+    title: "Still have a question?",
+    body: "Message our team on WhatsApp. We'll answer it, or walk you through OQwik on a quick call.",
+    cta: "Ask us on WhatsApp",
+    message: "Hi OQwik, I have a question before starting my free trial.",
+  },
   items: [
     {
       q: "Do my guests need to download an app?",
       a: "No. Scanning the table QR opens your menu in the phone's browser. It works on any smartphone with a camera.",
     },
     {
+      q: "How do guests scan the QR code to order food?",
+      a: "They open the phone camera (or Google Lens, or any UPI app's scanner) and point it at the QR on their table. Your menu opens with the table number already filled in. They add dishes, pay online and the order goes straight to your kitchen. No waiter, no app download.",
+    },
+    {
       q: "What do I need to get started?",
       a: "Your menu and an internet connection. Your team runs the kitchen board on a phone, tablet or laptop. A thermal printer is optional if you want printed KOTs and bills.",
+    },
+    {
+      q: "Does OQwik work for cafes, QSRs and fine-dining restaurants?",
+      a: "Yes. It works wherever guests sit at a table: cafes, family restaurants, dhabas, QSRs (quick-service restaurants) and fine-dining rooms. Each table's QR tags its own orders, and staff can punch in counter and walk-in orders on the same system.",
     },
     {
       q: "How does the free trial work?",
@@ -198,6 +214,22 @@ export const faq = {
     {
       q: "How do online payments reach my bank account?",
       a: "Payments go through a licensed payment gateway and are settled to your bank account. We help you connect your account during setup.",
+    },
+    {
+      q: "How is this different from my PhonePe, Paytm or Google Pay QR?",
+      a: "A PhonePe, Paytm or Google Pay QR on your counter only collects money. Your staff still take the order, write the KOT and match the payment to the table. An OQwik table QR takes the order itself: the guest picks dishes, pays (with PhonePe, Google Pay, Paytm or any UPI app), and the kitchen gets a KOT tagged with the table, already paid.",
+    },
+    {
+      q: "What is a KOT in a restaurant?",
+      a: "KOT stands for Kitchen Order Ticket: the slip that tells the kitchen what to cook and for which table. With OQwik, every paid QR order creates its KOT automatically, tagged with the table number. It shows on your kitchen board and prints on your thermal printer if you use one.",
+    },
+    {
+      q: "How much GST is charged on restaurant food?",
+      a: "Most standalone restaurants charge 5% GST on food (2.5% CGST + 2.5% SGST), without input tax credit. Restaurants inside hotels with a room tariff of ₹7,500 or more charge 18%. OQwik works out the tax on every bill at the rate you set, so check your rate with your CA once during setup.",
+    },
+    {
+      q: "Does OQwik replace Zomato or Swiggy?",
+      a: "No, they do different jobs. Stay a Zomato or Swiggy restaurant partner for delivery orders. OQwik handles the guests already sitting at your tables: their orders, KOTs, payments and bills, straight between you and them.",
     },
     {
       q: "Can staff still take orders the old way?",
@@ -225,9 +257,14 @@ export const closing = {
     reopen: "WhatsApp didn't open? Send it from here",
     editAgain: "Edit my details",
     privacy: "We only use these details to set up your trial.",
+    privacyLink: "Privacy policy",
   },
 };
 
 export const footer = {
-  tagline: "QR ordering and billing for restaurants.",
+  tagline: "QR code ordering, KOT and GST billing for restaurants in India.",
+  legal: [
+    { href: "/privacy-policy", label: "Privacy policy" },
+    { href: "/terms-and-conditions", label: "Terms and conditions" },
+  ],
 };

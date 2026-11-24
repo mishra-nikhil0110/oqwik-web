@@ -162,6 +162,22 @@
 }
 
 /* One gutter for every section: 16px on phones, wider on desktop. */
+/* Thin Marigold scrollbar for inner scroll panels (FAQ). */
+@utility scrollbar-marigold {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-marigold) transparent;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-marigold);
+    border-radius: 999px;
+  }
+}
+
 @utility container-page {
   width: 100%;
   max-width: 76rem;

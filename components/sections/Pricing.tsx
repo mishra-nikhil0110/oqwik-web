@@ -1,5 +1,6 @@
 // components/sections/Pricing.tsx - pricing teaser: what's included and the free
-// start; the price itself is quoted per outlet on the call.
+// start; the price itself is quoted per outlet on the call. On desktop the plan
+// card sits on the left and the heading on the right; phones read heading first.
 
 import { Check } from "lucide-react";
 import { pricing } from "@/lib/content";
@@ -9,10 +10,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export function Pricing() {
   return (
     <section id="pricing" aria-labelledby="pricing-title" className="py-20 sm:py-24">
-      <div className="container-page grid items-start gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-        <SectionHeading id="pricing-title" eyebrow={pricing.eyebrow} title={pricing.title} intro={pricing.body} />
+      <div className="container-page grid items-start gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="lg:order-2">
+          <SectionHeading id="pricing-title" eyebrow={pricing.eyebrow} title={pricing.title} intro={pricing.body} />
+        </div>
 
-        <div className="rounded-3xl border-t-4 border-marigold bg-white p-6 shadow-[0_30px_60px_-36px_rgba(20,20,43,0.35)] ring-1 ring-line sm:p-9">
+        <div className="rounded-3xl lg:order-1 border-t-4 border-marigold bg-white p-6 shadow-[0_30px_60px_-36px_rgba(20,20,43,0.35)] ring-1 ring-line sm:p-9">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-[16px] font-semibold text-ink-2">{pricing.planName}</p>
             <span className="rounded-full bg-marigold px-3 py-1 text-[13px] font-bold text-ink">{pricing.badge}</span>
