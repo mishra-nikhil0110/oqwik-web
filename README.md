@@ -24,7 +24,7 @@ npm run build && npm start
 
 ## Environment (`.env.local`, see `.env.example`)
 
-- `NEXT_PUBLIC_SITE_URL`: the live domain, e.g. `https://oqwik.com`. Canonical URLs, the sitemap, robots.txt and structured data are built from it. **Set it before deploying.**
+- `NEXT_PUBLIC_SITE_URL`: the live domain, `https://www.oqwik.in` (with www: the bare domain redirects there). Canonical URLs, the sitemap, robots.txt and structured data are built from it. **Set it before deploying.**
 - `NEXT_PUBLIC_NOINDEX=true`: keeps a staging deployment out of search results. Vercel preview deployments are blocked automatically.
 - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_BING_SITE_VERIFICATION`: verification codes from Google Search Console and Bing Webmaster Tools.
 - `LEAD_WEBHOOK_URL`: trial requests are POSTed here as JSON (Slack, Zapier, Google Apps Script…). Without it, leads only go to the server log.

@@ -7,9 +7,10 @@
 // "restaurant near me", "veg restaurant near me" or celebrity restaurants bring
 // visitors who will never start a trial, so they are deliberately left out.
 
-// CONFIRM: set NEXT_PUBLIC_SITE_URL to the live domain in the hosting dashboard.
+// The live domain. oqwik.in redirects to www, so www is the canonical host.
+// NEXT_PUBLIC_SITE_URL in the hosting dashboard overrides it (keep them equal).
 // Every canonical URL, the sitemap and the structured data are built from it.
-const FALLBACK_SITE_URL = "https://oqwik.com";
+const FALLBACK_SITE_URL = "https://www.oqwik.in";
 
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL).replace(/\/+$/, "");
 

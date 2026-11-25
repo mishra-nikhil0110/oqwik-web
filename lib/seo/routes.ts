@@ -28,7 +28,6 @@ export const routes = {
     lastModified: "2026-11-24",
     changeFrequency: "weekly",
     priority: 1,
-    images: ["/images/maholi/counter.webp", "/images/dishes/paneer-tikka.webp", "/images/dishes/chicken-biryani.webp"],
   },
   privacy: {
     path: "/privacy-policy",
