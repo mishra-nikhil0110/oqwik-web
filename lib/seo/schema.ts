@@ -5,9 +5,10 @@
 // Deliberately NOT included:
 // - aggregateRating / Review for the testimonial: Google treats reviews a
 //   business publishes about itself as self-serving and ignores or penalises them.
-// - Offer with price 0: the product is paid after the trial; a ₹0 price would mislead.
+// - Offer with price 0 on OQwik itself: it is paid after the trial; a ₹0 price would
+//   mislead. (The free QR menu generator really is free, so its schema has one.)
 
-import { faq, features, site } from "@/lib/content";
+import { faq, features, footer, site } from "@/lib/content";
 import { legal } from "@/lib/legal/config";
 import { absoluteUrl, seo, siteUrl } from "./config";
 import type { PageRoute } from "./routes";
@@ -38,6 +39,7 @@ export function organizationSchema() {
         ...(legal.email ? { email: legal.email } : {}),
       },
     ],
+    parentOrganization: { "@type": "Organization", name: footer.maker.name, url: footer.maker.href },
     ...(seo.sameAs.length ? { sameAs: seo.sameAs } : {}),
   };
 }
@@ -71,11 +73,11 @@ export function softwareSchema() {
   };
 }
 
-export function faqSchema() {
+export function faqSchema(items: { q: string; a: string }[] = faq.items, path = "/") {
   return {
     "@type": "FAQPage",
-    "@id": `${absoluteUrl("/")}#faq`,
-    mainEntity: faq.items.map((item) => ({
+    "@id": `${absoluteUrl(path)}#faq`,
+    mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.q,
       acceptedAnswer: { "@type": "Answer", text: item.a },
@@ -108,6 +110,28 @@ export function webPageSchema(route: PageRoute, opts: { title: string; descripti
       ],
     },
   ];
+}
+
+/** The free QR menu generator: a free web app, separate from the paid product. */
+export function freeToolSchema(route: PageRoute, opts: { name: string; description: string; features: string[] }) {
+  const url = absoluteUrl(route.path);
+  return {
+    "@type": "WebApplication",
+    "@id": `${url}#app`,
+    name: opts.name,
+    url,
+    description: opts.description,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web browser",
+    browserRequirements: "Requires JavaScript",
+    inLanguage: seo.language,
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+    featureList: opts.features,
+    audience: { "@type": "BusinessAudience", audienceType: "Restaurant, cafe and dhaba owners" },
+    publisher: { "@id": ORG_ID },
+    mainEntityOfPage: { "@id": `${url}#webpage` },
+  };
 }
 
 /** Wraps nodes in one @graph so entities can reference each other by @id. */

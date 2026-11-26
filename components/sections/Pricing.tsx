@@ -2,7 +2,7 @@
 // start; the price itself is quoted per outlet on the call. On desktop the plan
 // card sits on the left and the heading on the right; phones read heading first.
 
-import { Check } from "lucide-react";
+import { ArrowRight, Check, QrCode } from "lucide-react";
 import { pricing } from "@/lib/content";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -11,8 +11,24 @@ export function Pricing() {
   return (
     <section id="pricing" aria-labelledby="pricing-title" className="py-20 sm:py-24">
       <div className="container-page grid items-start gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-        <div className="lg:order-2">
+        <div className="flex flex-col gap-8 lg:order-2">
           <SectionHeading id="pricing-title" eyebrow={pricing.eyebrow} title={pricing.title} intro={pricing.body} />
+          <a
+            href={pricing.freeTool.link.href}
+            className="group flex max-w-xl items-start gap-4 rounded-3xl bg-mist p-5 ring-1 ring-line transition-colors hover:bg-marigold-soft hover:ring-marigold"
+          >
+            <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white text-marigold-ink ring-1 ring-line">
+              <QrCode className="size-5" aria-hidden="true" />
+            </span>
+            <span>
+              <span className="block text-[17px] font-semibold text-ink">{pricing.freeTool.title}</span>
+              <span className="mt-1 block text-[15px] leading-relaxed text-ink-2">{pricing.freeTool.body}</span>
+              <span className="mt-2 inline-flex items-center gap-1.5 text-[15px] font-semibold text-brand">
+                {pricing.freeTool.link.label}
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+              </span>
+            </span>
+          </a>
         </div>
 
         <div className="rounded-3xl lg:order-1 border-t-4 border-marigold bg-white p-6 shadow-[0_30px_60px_-36px_rgba(20,20,43,0.35)] ring-1 ring-line sm:p-9">

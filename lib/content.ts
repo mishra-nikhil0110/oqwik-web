@@ -177,6 +177,11 @@ export const pricing = {
     "Menu setup and staff training from our team",
   ],
   cta: { href: "#start-trial", label: "Get my quote and free trial" },
+  freeTool: {
+    title: "Not ready for ordering yet?",
+    body: "Put your menu on a QR code today with our free generator. No sign-up.",
+    link: { href: "/free-qr-menu-generator", label: "Make a free QR menu" },
+  },
 };
 
 export const faq = {
@@ -263,6 +268,17 @@ export const closing = {
 
 export const footer = {
   tagline: "QR code ordering, KOT and GST billing for restaurants in India.",
+  columns: [
+    {
+      title: "Product",
+      links: [...nav.links, { href: "/qr-code-menu", label: "QR code menu" }],
+    },
+    {
+      title: "Free tools",
+      links: [{ href: "/free-qr-menu-generator", label: "QR code menu generator" }],
+    },
+  ],
+  maker: { prefix: "A product by", name: "Nivabyte Software", href: "https://www.nivabytesoftware.com/" },
   legal: [
     { href: "/privacy-policy", label: "Privacy policy" },
     { href: "/terms-and-conditions", label: "Terms and conditions" },

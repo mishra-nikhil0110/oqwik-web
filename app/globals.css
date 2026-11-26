@@ -178,6 +178,14 @@
   }
 }
 
+/* Horizontal chip rows that scroll without showing a bar (menu sections). */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @utility container-page {
   width: 100%;
   max-width: 76rem;

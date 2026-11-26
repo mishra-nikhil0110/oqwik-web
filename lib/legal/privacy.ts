@@ -58,6 +58,10 @@ export const privacyPolicy: LegalDoc = {
               text: "table number, items ordered, notes such as \"less spicy\", order time, payment status and the payment reference. If a restaurant asks for your name or phone number (for example, to send your bill), we store that too.",
             },
             {
+              term: "Free QR menu generator:",
+              text: "nothing. The menu you type is kept only in your own browser and inside the QR link itself; it is not sent to or stored by us.",
+            },
+            {
               term: "Technical data:",
               text: "IP address, device and browser type, pages viewed and error logs, used to keep the service secure and working.",
             },

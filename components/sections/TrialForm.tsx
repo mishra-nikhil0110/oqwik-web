@@ -88,7 +88,7 @@ export function TrialForm() {
           <label htmlFor="trial-name" className={label}>
             Your name
           </label>
-          <input id="trial-name" name="name" required autoComplete="name" className={field} placeholder="Ravi Sharma" />
+          <input id="trial-name" name="name" required autoComplete="name" className={field} />
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="trial-phone" className={label}>
@@ -104,7 +104,7 @@ export function TrialForm() {
             pattern="(\+91[\s\-]?)?[6-9][0-9]{4}[\s\-]?[0-9]{5}"
             title="A 10-digit Indian mobile number"
             className={field}
-            placeholder="98765 43210"
+            placeholder="10-digit mobile number"
           />
         </div>
       </div>
@@ -112,20 +112,20 @@ export function TrialForm() {
         <label htmlFor="trial-restaurant" className={label}>
           Restaurant name
         </label>
-        <input id="trial-restaurant" name="restaurant" required autoComplete="organization" className={field} placeholder="e.g. Saffron Table" />
+        <input id="trial-restaurant" name="restaurant" required autoComplete="organization" className={field} />
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <label htmlFor="trial-city" className={label}>
             City
           </label>
-          <input id="trial-city" name="city" required autoComplete="address-level2" className={field} placeholder="Lucknow" />
+          <input id="trial-city" name="city" required autoComplete="address-level2" className={field} />
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="trial-tables" className={label}>
             Number of tables <span className="font-normal text-ink-2">(optional)</span>
           </label>
-          <input id="trial-tables" name="tables" type="number" min={1} max={500} inputMode="numeric" className={field} placeholder="12" />
+          <input id="trial-tables" name="tables" type="number" min={1} max={500} inputMode="numeric" className={field} />
         </div>
       </div>
 
